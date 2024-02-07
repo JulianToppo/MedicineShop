@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.medItems{
+  display: flex;
+  width:100%;
+  justify-content: space-around;
+  margin: 1%;
+  background-color: rgb(221, 219, 219);
+  border-radius: 25px;
+}
+
+.cartItems{
+  display: flex;
+  width:100%;
+  justify-content: space-around;
+  background-color: bisque;
+}

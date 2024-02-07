@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./components/Header";
+import React, { useContext, useEffect, useState } from "react";
+import MedicineForm from "./components/MedicineForm";
+import MedicineContextStore from "./utils/MedicineContextStore";
+import Medicines from "./components/Medicines";
+import CartContextStore from "./utils/CartContextStore";
+import Cart from "./components/Cart";
+import CartContext from "./utils/CartContext";
 
 function App() {
+  const cartCtx= useContext(CartContext);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <CartContextStore>
+        <MedicineContextStore>
+          <Header />
+          <MedicineForm />
+          <Medicines />
+          <Cart/>
+        </MedicineContextStore>
+      </CartContextStore>
+    </React.Fragment>
   );
 }
 
